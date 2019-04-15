@@ -1,8 +1,6 @@
-package UserInterface;
+
 
 import java.util.Scanner;
-
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Elecli {
 	
@@ -29,10 +27,10 @@ public class Elecli {
 			
 			switch(userCommand.toLowerCase()) {
 			case "1":
-				OpampCalculator();
+				OhmsLawCalculator();
 				break;
 			case "2":
-				OhmsLawCalculator();
+				OpampCalculator();
 				break;
 			case "3":
 				ResistivityCalculator();
@@ -60,6 +58,8 @@ public class Elecli {
 	
 	private static void OhmsLawCalculator(){
 		
+	OhmsLawUtility ohm = new OhmsLawUtility();
+		
 		double r,i,v;
 		
 		Scanner UserInputRaw = new Scanner( System.in );
@@ -71,10 +71,11 @@ public class Elecli {
     	
     	if(UserInput.equalsIgnoreCase("1")) {
 	    	System.out.print("\nEnter Voltage:");	
-	    	r = Double.parseDouble(UserInputRaw.nextLine());
+	    	v = Double.parseDouble(UserInputRaw.nextLine());
 	    	System.out.print("\nEnter Current:");	
 	    	i = Double.parseDouble(UserInputRaw.nextLine());
 	    	
+	    	System.out.print("The resistance of the circuit is: " + ohm.CalculateResistance(v, i) );
 	    	
 
     	}

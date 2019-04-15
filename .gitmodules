@@ -1,0 +1,3 @@
+[submodule "Elecli-Library"]
+	path = Elecli-Library
+	url = https://github.com/A1ph4n4m3r1c/Elecli-Library.git
